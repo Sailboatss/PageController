@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanou.mapper.MessageBoardMapper">
+
+
+
+
+
+<resultMap id="messMap" type="MessageBoard">
+    <id column="id" property="id"/>
+    <result column="content" property="content"/>
+    <result column="upCount" property="upCount"/>
+    <result column="downCount" property="downCount"/>
+</resultMap>
+
+    <insert id="insertMessageBoard">
+        INSERT INTO messageboard VALUES (NULL,#{content},0,0)
+    </insert>
+
+    <update id="updateMessageBoard">
+        UPDATE messageboard SET upCount = #{upCount} WHERE id = #{id}
+    </update>
+
+    <update id="downCountMessageBoard">
+        UPDATE messageboard SET downCount = #{downCount} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteMessageBoard" parameterType="integer">
+        DELETE FROM messageboard WHERE id = #{id}
+    </delete>
+
+    <select id="findAllMess" resultMap="messMap">
+        SELECT * FROM messageboard
+    </select>
+
+    <select id="findId" resultMap="messMap" parameterType="integer">
+        SELECT * FROM messageboard WHERE id = #{id}
+    </select>
+
+
+</mapper>
