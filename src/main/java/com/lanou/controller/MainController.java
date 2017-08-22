@@ -95,7 +95,11 @@ public class MainController {
         return messageBoardService.queryPage(2,2);
    }
 
-
+    @RequestMapping(value = "/gitTest")
+    @ResponseBody
+   public String gitTest(){
+       return "bbb";
+   }
 
 
 }
