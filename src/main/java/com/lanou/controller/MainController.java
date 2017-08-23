@@ -105,6 +105,7 @@ public class MainController {
     @RequestMapping(value = "branch")
     @ResponseBody
     public String branchTest(){
+        System.out.println("bbb");
        return null;
     }
 
