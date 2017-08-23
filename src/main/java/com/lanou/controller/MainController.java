@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.lanou.bean.MessageBoard;
 import com.lanou.mapper.MessageBoardMapper;
 import com.lanou.service.MessageBoardService;
+import org.junit.Test;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -98,14 +99,11 @@ public class MainController {
     @RequestMapping(value = "/gitTest")
     @ResponseBody
    public String gitTest(){
+        System.out.println("aaaa");
        return "bbb";
    }
 
-   //编辑代码
-    @RequestMapping(value = "branch")
-    @ResponseBody
-    public String branchTest(){
-       return null;
-    }
+
+
 
 }

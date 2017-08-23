@@ -13,7 +13,7 @@
     <result column="downCount" property="downCount"/>
 </resultMap>
 
-    <insert id="insertMessageBoard">
+    <insert id="insertMessageBoard" >
         INSERT INTO messageboard VALUES (NULL,#{content},0,0)
     </insert>
 
